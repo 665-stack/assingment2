@@ -1,6 +1,9 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&family=Poppins:wght@500&display=swap');
 /* common styles or utilities*/
+body{
+    background-color: rgba(209, 110, 110, 0.171);
+}
 p{
     font-family: 'Poppins', sans-serif;
 }
@@ -10,13 +13,14 @@ span{
 /* header start */
 header{
      display: flex;
-     justify-content: space-between;
+     justify-content: flex-end;
+     margin-bottom: 50px;
+     border: 1px solid black;
 }
 .start-journey{
-    margin-top: 70px;
-     margin-left: 40px;
-    width: 45%;
-    /* border: 1px solid black; */
+      margin: 100px 50px 30px 40px;
+    /* width: 45%; */
+     border: 1px solid black;
 }
 .start-journey h1{
     font-size: 52px;
@@ -30,12 +34,17 @@ header{
 }
 .start-journey button {
     color: white;
-    padding: 8px 20px;
-    background: #E02C6D;
+    padding: 10px 15px;
+    background-image: linear-gradient(rgb(83, 43, 30),rgb(151, 67, 67));
     border: none;
-    border-radius: 41px;
-
+    border-radius: 5px;
+    transition: 0.4s;
 }
+ .start-journey button:hover{
+    padding: 10px 20px; 
+     background-image: linear-gradient(rgb(151, 67, 67),rgb(83, 43, 30));
+     
+} 
 .start-journey button a{
     color: white;
     text-decoration: none;
@@ -44,25 +53,31 @@ header{
     outline: none;
 }
 
-.camera{
-    margin-top: 50px;
-    margin-right: 50px;
+.camera{ 
+    margin: 50px 50px 0px 50px;
+    padding-top: 50px;
 }
 .camera img{
-    width: 80%;
+    width: 100%;
+    padding-top: 100px;
 }
 
 /* product style start */
+.product-container{
+    margin-bottom: 100px;
+}
 .products{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-   
+   border: 1px solid black;
+
 }
 .product{
+    
     margin-top: 50px;
     margin-right: 0;
-    
+    border: 0.1px solid rgb(187, 184, 184);
     padding: 10px;
     border-radius: 5px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -97,7 +112,26 @@ header{
 .product-detail p{
     font-size:14px ;
 }
-
+.product-container .see-more-btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-top: 50px;
+    margin-right: 60px;
+}
+    
+.product-container a {
+   
+    
+    color: rgb(204, 54, 54);
+    text-decoration: none;
+    margin-right: 5px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.product-container .btn{
+    color: rgb(204, 54, 54);
+}
 .products .product{
     /* display: grid; */
      width: 250px;
@@ -111,6 +145,59 @@ header{
 .fa-star.empty{
     color: #aeaeae;
 }
+/* contact form start from here */
+.contact-container h2{
+       text-align: center;
+       font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(43, 42, 42);
+    font-size: 30px;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+}
+.contact span{
+    font-weight: 900;
+    color: ;
+    color: rgb(10, 8, 8);
+}
+.contact input, textarea{
+    margin: 10px 0px;
+    resize: none;
+    padding: 5px 10px;
+    border: none;
+    background-color: rgb(219, 200, 200);
+   
+}
+.contact input:hover, textarea:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+address h5{
+    font-size: 16px;
+    font-weight: 500px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 10px 0px;
+}
+address p{
+    font-size: small;
+    margin: 0;
+}
+.contact-form button{
+    color: white;
+    padding: 10px 15px;
+    background-image: linear-gradient(rgb(83, 43, 30),rgb(151, 67, 67));
+    border: none;
+    border-radius: 5px;
+   transition: 0.4s;
+}
+.contact-form button:hover{
+    background-image: linear-gradient(rgb(151, 67, 67),rgb(83, 43, 30));
+}
+
 
 
 /* footer start */
@@ -125,10 +212,12 @@ footer{
     padding: 30px 0;
 }
 footer h5{
-    font-size: 20px;
-    color: rgb(148, 116, 116);
+    font-size: 25px;
+    color: rgb(172, 143, 143);
+    
     font-family: 'Poppins', sans-serif;
-    margin: 0;
+    margin: 5px 0 15px 0;
+
 }
 footer .footer-delt{
     font-size: 14px;
@@ -138,6 +227,14 @@ footer .footer-delt{
 }
 footer .footer-delt strong{
     font-weight: 200;
+    font-size: small;
+}
+.footer-delt .style-icon{
+    margin: 0px 10px;
+    font-size: 15px;
+}
+.footer-delt .style-icon:visited{
+    color: rgb(51, 51, 192);
 }
 
 /* responsive starts */
@@ -169,6 +266,15 @@ footer .footer-delt strong{
     }
     header .start-journey{
         padding: 0;
+        order: 2;
+        text-align: center;
+        
+    }
+    .contact{
+        flex-direction: column;
+    }
+    .contact address{
+        margin-top: 50px;
     }
     
 }
@@ -190,13 +296,15 @@ footer .footer-delt strong{
     header .start-journey .camera{
          width: 100%;
          
-
+    }
+    header .start-journey{
+        order: 2;
     }
 }
 @media only screen (min-width:992px) {
-    header .start-journey{
+    /* header .start-journey{
         padding-left:30px
-    }
-    
+    } */
+   
 }
 
