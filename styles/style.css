@@ -1,5 +1,7 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&family=Poppins:wght@500&display=swap');
+
+
 /* common styles or utilities*/
 body{
     background-color: rgba(209, 110, 110, 0.171);
@@ -10,17 +12,35 @@ p{
 span{
     font-family: 'Poppins', sans-serif;
 }
-/* header start */
-header{
+
+
+/*-----------
+-------- header start------
+------------------------*/
+
+header .icon-img{
+    width: 70px;
+    margin-left: 40px;
+    margin-top: 20px;
+    animation: sliding 1.6s ease-in-out 0.4s infinite alternate;
+    animation-play-state: running;
+    
+}
+@keyframes sliding {
+    from{
+        transform: scale(0.7);
+    }
+    to{
+        transform: scale(1.1);
+    }
+}
+.header-container{
      display: flex;
      justify-content: flex-end;
      margin-bottom: 50px;
-     border: 1px solid black;
 }
 .start-journey{
-      margin: 100px 50px 30px 40px;
-    /* width: 45%; */
-     border: 1px solid black;
+      margin: 20px 50px 30px 40px;
 }
 .start-journey h1{
     font-size: 52px;
@@ -54,15 +74,17 @@ header{
 }
 
 .camera{ 
-    margin: 50px 50px 0px 50px;
-    padding-top: 50px;
+    margin: 0px 50px 0px 50px;
 }
 .camera img{
     width: 100%;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
-/* product style start */
+/* -----------------
+product style start
+--------------------- */
+
 .product-container{
     margin-bottom: 100px;
 }
@@ -70,7 +92,6 @@ header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-   border: 1px solid black;
 
 }
 .product{
@@ -99,7 +120,8 @@ header{
     text-align: center;
 }
 .product-detail h4{
-    font-size: 28px;
+    font-size: 25px;
+    color:rgb(43, 42, 42) ;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
@@ -133,7 +155,6 @@ header{
     color: rgb(204, 54, 54);
 }
 .products .product{
-    /* display: grid; */
      width: 250px;
 }
 .fa-star{
@@ -145,7 +166,10 @@ header{
 .fa-star.empty{
     color: #aeaeae;
 }
-/* contact form start from here */
+/* ------------------------
+contact form start from here
+----------------------------*/
+
 .contact-container h2{
        text-align: center;
        font-weight: 700;
@@ -200,7 +224,9 @@ address p{
 
 
 
-/* footer start */
+/* -----------------
+    footer start
+--------------- */
 
 footer{
     background-color: rgb(27, 18, 15);
@@ -237,7 +263,9 @@ footer .footer-delt strong{
     color: rgb(51, 51, 192);
 }
 
-/* responsive starts */
+/* ---------------
+    responsive starts
+----------------------*/
 
 @media only screen and (max-width:688px){
     .container{
@@ -250,7 +278,10 @@ footer .footer-delt strong{
     .product{
         flex-direction: column;
     }
-    header{
+    header .icon-img{
+        display: none;
+    }
+    .header-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -258,13 +289,13 @@ footer .footer-delt strong{
         width: 100%;
         padding: 0;
     }
-    header .start-journey .camera{
+    .header-container .start-journey .camera{
          width: 100%;
          margin: 0px;
          padding: 0px;
         
     }
-    header .start-journey{
+    .header-container .start-journey{
         padding: 0;
         order: 2;
         text-align: center;
@@ -286,25 +317,22 @@ footer .footer-delt strong{
         grid-template-columns: repeat(2, 1fr);
         
     }
-    header{
+    .header-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
-    header .start-journey .camera{
+    .header-container .start-journey .camera{
          width: 100%;
          
     }
-    header .start-journey{
+    .header-container .start-journey{
         order: 2;
     }
 }
 @media only screen (min-width:992px) {
-    /* header .start-journey{
-        padding-left:30px
-    } */
-   
+
 }
 
